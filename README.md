@@ -50,5 +50,3 @@ Next.js · React · TypeScript · MongoDB · Web Crypto · Shiki
 - Don’t share a paste URL with people you don’t trust. The link holds the key.
 - Expired pastes are deleted automatically.
 - There is no account recovery. If the link or password is gone, the paste is gone.
-
-MIT
