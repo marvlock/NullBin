@@ -81,6 +81,44 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
+/* The landing screens use a deliberate dark shell, with a complete light-mode
+   counterpart so next-themes can switch the entire interface. */
+html:not(.dark) .nullbin-shell {
+  background: #fafafa !important;
+  color: #18181b !important;
+}
+
+html:not(.dark) .nullbin-shell header,
+html:not(.dark) .nullbin-shell .bg-zinc-950 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .nullbin-shell .text-white,
+html:not(.dark) .nullbin-shell .text-zinc-100 {
+  color: #18181b !important;
+}
+
+html:not(.dark) .nullbin-shell .text-zinc-300,
+html:not(.dark) .nullbin-shell .text-zinc-400 {
+  color: #52525b !important;
+}
+
+html:not(.dark) .nullbin-shell .text-zinc-500,
+html:not(.dark) .nullbin-shell .text-zinc-600 {
+  color: #71717a !important;
+}
+
+html:not(.dark) .nullbin-shell .border-white\/5,
+html:not(.dark) .nullbin-shell .border-white\/10,
+html:not(.dark) .nullbin-shell .border-white\/20 {
+  border-color: #e4e4e7 !important;
+}
+
+html:not(.dark) .nullbin-shell .bg-white\/\[\.02\],
+html:not(.dark) .nullbin-shell .bg-white\/\[\.04\] {
+  background-color: #f4f4f5 !important;
+}
+
 .dot-bg {
   background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;

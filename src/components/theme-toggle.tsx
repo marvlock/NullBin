@@ -7,7 +7,12 @@ import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => setMounted(true), [])
+
+  const isDark = resolvedTheme !== "light"
 
   return (
     <TooltipProvider>
@@ -16,11 +21,11 @@ export function ThemeToggle() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="relative h-9 w-9 rounded-lg transition-all duration-200 hover:bg-accent hover:scale-110 active:scale-95"
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className="relative h-9 w-9 rounded-md transition-colors hover:bg-accent"
+            aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
           >
-            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
+            {mounted && isDark ? <Sun className="h-[1.1rem] w-[1.1rem]" /> : <Moon className="h-[1.1rem] w-[1.1rem]" />}
             <span className="sr-only">Toggle theme</span>
           </Button>
         </TooltipTrigger>
